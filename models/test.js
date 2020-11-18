@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const Pregunta = mongoose.model('Pregunta', {
+const Test = mongoose.model('Test', {
 
     pregunta: {
         type: String,
@@ -24,6 +24,6 @@ const Pregunta = mongoose.model('Pregunta', {
     }
 })
 
-module.exports = Pregunta
+module.exports = Test
 
 

@@ -1,8 +1,8 @@
 const express = require('express')
 
 require('./db/mongoose')
-const Pregunta = require('./models/pregunta')
-const preguntaRouter = require('./routers/pregunta')
+const Pregunta = require('./models/test')
+const preguntaRouter = require('./routers/test')
 
 const port = process.env.PORT
 
