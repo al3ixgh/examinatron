@@ -1,8 +1,8 @@
 const express = require('express')
 
 require('./db/mongoose')
-const Pregunta = require('./models/test')
-const preguntaRouter = require('./routers/test')
+const Test = require('./models/test')
+const testRouter = require('./routers/test')
 
 const port = process.env.PORT
 
@@ -32,8 +32,8 @@ app.use((req, res, next) => {
 
 
 app.get('/', async (req, res) => {
-  await Pregunta.find({}).then((data) => {
-      res.render('index', { preguntas: data })
+  await Test.find({}).then((data) => {
+      res.render('index', { test: data })
   });
 });
 app.get('/create', (req, res) => {
@@ -44,7 +44,7 @@ app.post('/create', (req,res) => {
   res.redirect(307, './')
 })
 
-app.use('/api', preguntaRouter);
+app.use('/api', testRouter);
 
 
 app.use((req, res) => {
