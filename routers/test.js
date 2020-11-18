@@ -1,4 +1,3 @@
-
 const express = require('express')
 const router = new express.Router()
 const Test = require('../models/test')
@@ -41,7 +40,7 @@ router.get('/tests/:id', async (req, res) => {
 
 router.patch('/tests/:id', async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['pregunta', 'respuesta1', 'respuesta2', 'respuesta3', 'respuesta4']
+    const allowedUpdates = ['test','respuesta1', 'respuesta2','respuesta3','respuesta4']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {
@@ -76,13 +75,3 @@ router.delete('/tests/:id', async (req, res) => {
 })
 
 module.exports = router
-
-
-app.get('/tests', async (req,res)=>{
-    try{
-        const tests = await Test.find({})
-        res.render('tests', {title: 'List of tests', tests:tests});
-    } catch (e){
-        res.render('tests', {title: 'List of tests', tests: []})
-    }
-})

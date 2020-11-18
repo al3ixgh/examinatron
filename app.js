@@ -1,7 +1,7 @@
-const express = require('express')
+const express = require('express');
+const Test = require('./models/test');
 
 require('./db/mongoose')
-const Test = require('./models/test')
 const testRouter = require('./routers/test')
 
 const port = process.env.PORT
@@ -19,34 +19,21 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
-
-app.use((req, res, next) => {
-  console.log('new request made:');
-  console.log('host: ', req.hostname);
-  console.log('path: ', req.path);
-  console.log('method: ', req.method);
-  next();
-});
-
 
 app.get('/', async (req, res) => {
-  await Test.find({}).then((data) => {
-      res.render('index', { test: data })
-  });
+  try{
+    const tests =await Test.find({})
+    res.render('index', { tests: tests, titulo: 'Índice' });
+  }catch (e){
+
+  res.render('index', { tests: [], titulo: 'Índice' });
+  }
 });
-app.get('/create', (req, res) => {
-  res.render('create', {  })
-});
 
-app.post('/create', (req,res) => {
-  res.redirect(307, './')
-})
+app.use(express.json())
+app.use('/api', testRouter)
 
-app.use('/api', testRouter);
-
-
+// 404 page
 app.use((req, res) => {
-  res.status(404).render('404', {});
+  res.status(404).render('404', { titulo: '404' });
 });

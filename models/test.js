@@ -1,29 +1,36 @@
 const mongoose = require('mongoose')
 
 const Test = mongoose.model('Test', {
-
-    pregunta: {
+    pregunta:{
         type: String,
         required: true,
+        trim: true,
+        lowercase: true
     },
-    respuesta1: {
+    respuesta1:{
         type: String,
         required: true,
+        trim: true,
+        lowercase: true
     },
-    respuesta2: {
+    respuesta2:{
         type: String,
         required: true,
+        trim: true,
+        lowercase: true
     },
-    respuesta3: {
+    respuesta3:{
         type: String,
         required: true,
+        trim: true,
+        lowercase: true
     },
-    respuesta4: {
+    respuesta4:{
         type: String,
         required: true,
+        trim: true,
+        lowercase: true
     }
 })
 
 module.exports = Test
-
-
