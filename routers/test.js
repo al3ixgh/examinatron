@@ -5,6 +5,14 @@ const router = new express.Router()
 router.post('/tests', async (req, res) => {
     const test = new Test(req.body)
 
+
+    let pregunta = req.body.question
+    let respuesta1 = req.body.respuesta1
+    let respuesta2 = req.body.respuesta2
+    let respuesta3 = req.body.respuesta3
+    let respuesta4 = req.body.respuesta4
+    let newTest = {question, respuesta1, respuesta2, respuesta3, respuesta4}
+    
     try {
         await test.save()
         res.status(201).send(Test)
