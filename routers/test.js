@@ -76,3 +76,13 @@ router.delete('/tests/:id', async (req, res) => {
 })
 
 module.exports = router
+
+
+app.get('/tests', async (req,res)=>{
+    try{
+        const tests = await Test.find({})
+        res.render('tests', {title: 'List of tests', tests:tests});
+    } catch (e){
+        res.render('tests', {title: 'List of tests', tests: []})
+    }
+})
