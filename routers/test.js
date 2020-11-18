@@ -1,11 +1,11 @@
+
 const express = require('express')
-const Test = require('../models/test')
 const router = new express.Router()
+const Test = require('../models/test')
 
 router.post('/tests', async (req, res) => {
     const test = new Test(req.body)
 
-    
     try {
         await test.save()
         res.status(201).send(test)
@@ -41,7 +41,7 @@ router.get('/tests/:id', async (req, res) => {
 
 router.patch('/tests/:id', async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['pregunta','respuesta1','respuesta2','respuesta3','respuesta4']
+    const allowedUpdates = ['pregunta', 'respuesta1', 'pregunta2', 'pregunta3', 'pregunta4']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {
