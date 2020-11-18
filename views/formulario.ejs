@@ -1,0 +1,19 @@
+<%- include("./partials/header.ejs") %>
+
+<div class="create-blog content">
+  <form id="test-form" action="/api/tests" method="POST">
+    <label for="pregunta">pregunta:</label>
+    <textarea id="pregunta" name="pregunta" required rows="3" cols="70"></textarea>
+    <label for="respuesta1">respuesta 1:</label>
+    <textarea id="respuesta1" name="respuesta1" required rows="3" cols="70"></textarea>
+    <label for="respuesta2">respuesta 2:</label>
+    <textarea id="respuesta2" name="respuesta2" required rows="3" cols="70"></textarea>
+    <label for="respuesta3">respuesta 3:</label>
+    <textarea id="respuesta3" name="respuesta3" required rows="3" cols="70"></textarea>
+    <label for="respuesta4">respuesta 4:</label>
+    <textarea id="respuesta4" name="respuesta4" required rows="3" cols="70"></textarea>
+    <input type="submit" value="Crear test">
+  </form>
+</div>
+
+<%- include("./partials/footer.ejs") %>

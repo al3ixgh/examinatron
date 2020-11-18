@@ -30,7 +30,12 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.get('/form', (req, res)=>{
+  res.render('formulario', {titulo: 'Crear test'})
+})
+
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use('/api', testRouter)
 
 // 404 page
