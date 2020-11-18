@@ -1,39 +1,29 @@
 const mongoose = require('mongoose')
 
-const Cancion = mongoose.model('Cancion', {
+const Pregunta = mongoose.model('Pregunta', {
 
-    pregutna: {
+    pregunta: {
         type: String,
         required: true,
-        trim: true,
-        lowercase:true
     },
     respuesta1: {
         type: String,
         required: true,
-        trim: true,
-        lowercase:true
     },
     respuesta2: {
         type: String,
         required: true,
-        trim: true,
-        lowercase:true
     },
     respuesta3: {
         type: String,
         required: true,
-        trim: true,
-        lowercase:true
     },
     respuesta4: {
         type: String,
         required: true,
-        trim: true,
-        lowercase:true
     }
 })
 
-module.exports = Cancion
+module.exports = Pregunta
 
 

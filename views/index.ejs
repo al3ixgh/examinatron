@@ -1,14 +1,25 @@
-<%- include('./partials/header.ejs') %>
-    <main>
-        <section>
-            
-      
+<html lang="es">
+<%- include("./partials/head.ejs") %>
 
-            <% preguntas.forEach((pregunta)=>{ %>
-            <h3><%= pregunta.pregunta %> </h3>
-            <p><%= pregunta.answer1 %> <%= pregunta.answer2 %> <%= pregunta.answer3 %> <%= pregunta.answer4 %></p>
-            <%  }) %>
+<body>
+  <%- include("./partials/nav.ejs") %>
 
-        </section>
-    </main>
-<%- include('./partials/footer.ejs') %>
+  <div class="blogs content">
+    <% if (preguntas.length > 0) { %>
+      <% tests.forEach(test => { %>
+        <b><%= pregunta.pregunta %></b>
+        <ol>
+        <li><i><%= pregunta.respuesta1 %></i></li>
+        <li><i><%= pregunta.respuesta2 %></i></li>
+        <li><i><%= pregunta.respuesta3 %></i></li>
+        <li><i><%= pregunta.respuesta4 %></i></li>
+        </ol>
+      <% }) %>
+    <% } else { %>
+      <p>¡No hay ninguna pregunta!</p>
+    <% } %>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

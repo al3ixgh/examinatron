@@ -1,7 +1,6 @@
 {
   "name": "examinotron",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +16,14 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al3ixgh/examinatron.git"
+  },
+  "bugs": {
+    "url": "https://github.com/al3ixgh/examinatron/issues"
+  },
+  "homepage": "https://github.com/al3ixgh/examinatron#readme",
+  "description": ""
 }

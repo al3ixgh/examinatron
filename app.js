@@ -1,7 +1,8 @@
 const express = require('express')
 
 require('./db/mongoose')
-const testRouter = require('./routers/test')
+const Pregunta = require('./models/pregunta')
+const preguntaRouter = require('./routers/pregunta')
 
 const port = process.env.PORT
 
@@ -18,21 +19,34 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  const test = [
-    { marca: 'Audi', modelo: 'A3' },
-    { marca: 'BMW', modelo: 'X6' },
-    { marca: 'Mercedes', modelo: 'A380' }
-  ];
-  res.render('index', { test: test, titulo: 'Índice' });
+app.use((req, res, next) => {
+  console.log('new request made:');
+  console.log('host: ', req.hostname);
+  console.log('path: ', req.path);
+  console.log('method: ', req.method);
+  next();
 });
 
 
-app.use(express.json())
-app.use('/api', testRouter)
+app.get('/', async (req, res) => {
+  await Pregunta.find({}).then((data) => {
+      res.render('index', { preguntas: data })
+  });
+});
+app.get('/create', (req, res) => {
+  res.render('create', {  })
+});
 
-// 404 page
+app.post('/create', (req,res) => {
+  res.redirect(307, './')
+})
+
+app.use('/api', preguntaRouter);
+
+
 app.use((req, res) => {
-  res.status(404).render('404', { titulo: '404' });
+  res.status(404).render('404', {});
 });

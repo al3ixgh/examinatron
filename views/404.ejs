@@ -1,7 +1,13 @@
-<%- include('./partials/header.ejs') %>
-    <main>
-        <section>
-            <p>Ooops, no se ha encontrado la página!</p>
-        </section>
-    </main>
-<%- include('./partials/footer.ejs') %>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="Error 404">
+    <h2>Ha habido un error al cargar la pagina</h2>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
