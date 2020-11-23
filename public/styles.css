@@ -10,6 +10,7 @@
 div {
   text-align: center;
   align-items: center;
+  align-content: center;
 }
 body{
       max-width: 1200px;
