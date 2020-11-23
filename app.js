@@ -23,7 +23,7 @@ app.use(express.static('public'));
 app.get('/', async (req, res) => {
   try{
     const tests =await Test.find({})
-    res.render('index', { tests: tests, titulo: 'Índice' });
+    res.render('index', { tests: tests, titulo: 'Home' });
   }catch (e){
 
   res.render('index', { tests: [], titulo: 'Índice' });
