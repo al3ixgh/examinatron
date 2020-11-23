@@ -16,10 +16,11 @@ router.post('/tests', async (req, res) => {
 
 router.get('/tests', async (req, res) => {
     try {
-        const tests = await Test.find({})
-        res.send(tests)
+        const tests = await Test.find({});
+        res.status(201).render('index', { title: "Home", tests: tests});
     } catch (e) {
-        res.status(500).send()
+        res.status(400).render("page404", { title: "Página no encontrada" });
+        res.status(500).send();
     }
 })
 
