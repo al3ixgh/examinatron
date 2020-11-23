@@ -7,8 +7,9 @@
   box-sizing: border-box;
 }
 
-div li{
+div {
   text-align: center;
+  align-items: center;
 }
 body{
       max-width: 1200px;
