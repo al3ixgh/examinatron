@@ -7,7 +7,7 @@ router.post('/tests', async (req, res) => {
 
     try {
         await test.save()
-        res.redirect('/api/tests');
+        res.redirect('/');
     } catch (e) {
         res.status(400).render("page404", { title: "Página no encontrada" });
         console.log(e);
