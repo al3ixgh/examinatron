@@ -6,7 +6,9 @@
   margin:0;
   box-sizing: border-box;
 }
-
+ol{
+  align-content: center;
+}
 div {
   text-align: center;
   align-items: center;
