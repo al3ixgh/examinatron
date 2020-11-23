@@ -1,34 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-    
-* {
-  background-color: palegoldenrod;
-  padding: 0;
-  margin:0;
-  box-sizing: border-box;
-}
-ol li{
-  align-content: center;
-  text-align: center;
-  margin-left: auto;
-}
-div {
-  text-align: center;
-  align-items: center;
-  align-content: center;
-}
-
-p, h1, h2, h3, a{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  color: #222;
-}
-
-h3{
-  text-transform: capitalize;
-  margin-bottom: 8px;
-}
-
     body{
       max-width: 1200px;
       margin: 20px auto;
@@ -36,15 +6,15 @@ h3{
       font-family: 'Noto Serif', serif;
       max-width: 1200px;
     }
-    
-    nav ul{
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+    p, h1, h2, h3, a, ul{
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: #222;
     }
 
     /* nav & footer styles */
-    /*nav{
+    nav{
       display: flex;
       justify-content: space-between;
       margin-bottom: 60px;
@@ -76,7 +46,10 @@ h3{
     h2{
       margin-bottom: 40px;
     }
-    
+    h3{
+      text-transform: capitalize;
+      margin-bottom: 8px;
+    }
     .content{
       margin-left: 20px;
     }
@@ -86,7 +59,7 @@ h3{
     /* details styles */
 
     /* create styles */
-    /*.create-blog form{
+    .create-blog form{
       max-width: 400px;
       margin: 0 auto;
     }
@@ -112,4 +85,4 @@ h3{
       border: 0;
       font-size: 1.2em;
       cursor: pointer;
-    } 
+    }
