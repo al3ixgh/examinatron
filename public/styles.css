@@ -3,9 +3,7 @@
   background-color: palegoldenrod;
 }    
 
-div{
-  margin: auto;
-}
+
 
 body{
       max-width: 1200px;
@@ -93,4 +91,11 @@ body{
       border: 0;
       font-size: 1.2em;
       cursor: pointer;
+    }
+
+
+
+
+    div{
+      margin: auto;
     }
