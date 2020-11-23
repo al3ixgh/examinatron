@@ -37,6 +37,11 @@ h3{
       max-width: 1200px;
     }
     
+    nav ul{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
 
     /* nav & footer styles */
     /*nav{
